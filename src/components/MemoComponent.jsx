@@ -1,6 +1,6 @@
 // Memoization
 
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import ChildComponent from "./ChildComponent";
 
 // جلوگیری میکنه از رندر های تکراری
@@ -22,16 +22,20 @@ function MemoComponent() {
     return counter;
   }, [counter]);
 
+  const clickHandler = useCallback(() => {
+    setNumber((number) => number + 1);
+  }, [number]);
+
   return (
     <div>
       <span>{slow}</span>
       <h4>Memo Component</h4>
       <span>{counter}</span>
       <button onClick={() => setCounter((counter) => counter + 1)}>+</button>
-      {/* <ChildComponent nubmer={number} /> */}
-      <br />
-      <span>{number}</span>
-      <button onClick={() => setNumber((number) => number + 1)}>+</button>
+      <ChildComponent nubmer={number} clickHandler={clickHandler} />
+      {/* <br /> */}
+      {/* <span>{number}</span> */}
+      {/* <button onClick={() => setNumber((number) => number + 1)}>+</button> */}
     </div>
   );
 }
