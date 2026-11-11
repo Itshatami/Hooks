@@ -6,7 +6,7 @@ function arrayCreator(number = 10) {
     myArr.push(index);
   }
   return myArr;
-}
+} 
 
 function TransitionComponent() {
   console.log("Transition Component Rendered");

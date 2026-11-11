@@ -1,7 +1,8 @@
 // Memoization
 
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import ChildComponent from "./ChildComponent";
+import { useTitle } from "./hooks/useTitle";
 
 // جلوگیری میکنه از رندر های تکراری
 // مثلا وقت هایی که خروجی ها در هر رندر یکیه و نیاز نیست هربار همون محاسبات رو انجام بده
@@ -12,6 +13,11 @@ import ChildComponent from "./ChildComponent";
 // parent
 
 function MemoComponent() {
+  //   useEffect(() => {
+  //     document.title = "Memo";
+  //   });
+  useTitle("Memo");
+
   console.log("Memo Component is rendered.");
 
   const [counter, setCounter] = useState(0);
