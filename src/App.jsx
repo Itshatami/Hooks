@@ -1,5 +1,6 @@
 import MemoComponent from "./components/MemoComponent";
 import RefComponent from "./components/RefComponent";
+import TransitionComponent from "./components/TransitionComponent";
 
 
 function App() {
@@ -7,7 +8,8 @@ function App() {
     <>
       <h1>Ocean wave</h1>
       {/* <RefComponent /> */}
-      <MemoComponent />
+      {/* <MemoComponent /> */}
+      <TransitionComponent />
     </>
   );
 }
